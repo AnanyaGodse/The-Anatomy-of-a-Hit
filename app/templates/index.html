@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>The Anatomy of a Hit | Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎧 The Anatomy of a Hit</h1>
+        <h3>Predict whether your song could be a hit!</h3>
+
+        <form action="/predict" method="post">
+
+            <label>Track Genre:</label>
+            <select name="track_genre" required>
+                {% for g in genres %}
+                <option value="{{ g }}">{{ g }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Explicit:</label>
+            <select name="explicit">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <label>Danceability:</label>
+            <input type="number" step="0.01" name="danceability" required>
+
+            <label>Energy:</label>
+            <input type="number" step="0.01" name="energy" required>
+
+            <label>Loudness (dB):</label>
+            <input type="number" step="0.1" name="loudness" required>
+
+            <label>Speechiness:</label>
+            <input type="number" step="0.01" name="speechiness" required>
+
+            <label>Acousticness:</label>
+            <input type="number" step="0.01" name="acousticness" required>
+
+            <label>Instrumentalness:</label>
+            <input type="number" step="0.01" name="instrumentalness" required>
+
+            <label>Valence:</label>
+            <input type="number" step="0.01" name="valence" required>
+
+            <label>Tempo:</label>
+            <input type="number" step="0.1" name="tempo" required>
+
+            <label>Duration (min):</label>
+            <input type="number" step="0.1" name="duration_min" required>
+
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction_text %}
+        <div class="result-box">
+            <h2>{{ prediction_text }}</h2>
+        </div>
+        {% endif %}
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+body {
+    font-family: 'Century Schoolbook', serif;
+    background: linear-gradient(135deg, #0b1a0e 10%, #1DB954 120%);
+    color: #f7f7f7;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 0;
+    overflow-y: auto;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 18px;
+    padding: 40px 50px;
+    width: 420px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    text-align: center;
+    color: #1DB954;
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+    letter-spacing: 1px;
+}
+
+h3 {
+    text-align: center;
+    color: #b3b3b3;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #e3e3e3;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: 'Century Schoolbook', serif;
+    appearance: none;
+    cursor: pointer;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+option {
+    background-color: #0e1f0e;
+    color: #f1f1f1;
+}
+
+select:hover {
+    border-color: gold;
+    background-color: #1c1c1c;
+}
+
+input:focus,
+select:focus {
+    border-color: #1DB954;
+    box-shadow: 0 0 5px rgba(29, 185, 84, 0.6);
+}
+
+button {
+    background: linear-gradient(135deg, #1DB954, #17a24d);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #21e065, #1DB954);
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(29, 185, 84, 0.3);
+}
+
+.result {
+    margin-top: 25px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.result h2 {
+    color: gold;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-size: 1.3rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
